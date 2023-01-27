@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 17px;
+    --color-focus: rgb(148, 100, 3);
+    --color-bordes: #aaaaaa;
+    --color-placeholder: rgb(169, 167, 165);
+}
+
+form {
+    max-width: 450px;
+}
+
+label{
+    appearance: none;
+    display: block;
+    padding: 5px;
+
+}
+button,
+select,
+progress,
+meter,
+input[type="password"],
+input[type="text"] {
+    appearance: none;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom:10px;
+    margin-top:5px;
+    width: 100%;
+    border: 1px solid var(--color-bordes);
+}
+input:focus { 
+    outline:0; /*quita el borde en focus por defecto en los navegadores*/
+    border: 2px solid var(--color-focus);
+}
+input[type="radio"] {
+        appearance: none;
+      }
+
+      input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 2px solid grey;
+        /* Alinea la posición del botón radio con el texto en horizontal */
+        vertical-align: -3px;
+        outline: none;
+      }
+
+      input[type="radio"]::before {
+        display: block;
+        content: " ";
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: var(--color-focus);
+        font-size: 25px;
+        transform: translate(3px, 3px) scale(0);
+        transform-origin: center;
+        transition: all 0.3s ease-in;
+ 
+      }
+
+      input[type="radio"]:checked::before {
+        transform: translate(3px, 3px) scale(1);
+        transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+      }
+
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  left:10px;
+  top: -2px;
+}
+
+input:invalid {
+  /*border: 2px solid red;*/
+}
+
+input:invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
+}
+
+input::placeholder {
+    font-size: 14px;
+    color: var(--color-placeholder);
+}
+      fieldset{
+        width: 100%;
+        border: 1px solid var(--color-bordes);
+        margin-top:10px;
+        margin-bottom:10px;
+        box-sizing: border-box;
+    }
+    .radios_horizontales {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text">
+
+        <label for="apellido">Apellido</label>
+        <input id="apellido" name="apellido" type="text">
+
+        <label for="pass1">Contraseña</label>
+        <input id="pass1" name="pass1" type="password" required pattern="^(?=.*[a-z])(?=.*[A-Z]).{6,6}$" placeholder="6 CARACTERES INCLUÍDA 1 MAY, 1 MIN Y 1 NÚM">
+        <span></span>
+
+        <label for="pass2">Repetir contraseña</label>
+        <input id="pass2" name="pass2" type="password">
+        
+        <fieldset>
+            <legend>Elige una opción</legend>
+      
+            <p>
+              <label>
+                <input type="radio" name="fruit" value="cherry">
+                El alcalde
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="radio" name="fruit" value="banana">
+                El vecino
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="radio" name="fruit" value="strawberry">
+                El alcalde del vecino
+              </label>
+            </p>
+          </fieldset>
+
+
+          <fieldset class="radios_horizontales">
+            <legend>Valora de menos (1) a más (5)</legend>
+          
+
+
+              <label>
+                <input type="radio" name="valora" value="1">
+                1
+              </label>
+          
+              <label>
+                <input type="radio" name="valora" value="2">
+                2
+              </label>
+              <label>
+                <input type="radio" name="valora" value="3">
+                3
+              </label>
+              <label>
+                <input type="radio" name="valora" value="4">
+                4
+              </label>
+              <label>
+                <input type="radio" name="valora" value="4">
+                5
+              </label>
+
+
+           
+          </fieldset>
+
+
+    </form>
+</body>
+</html>
+	
