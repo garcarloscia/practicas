@@ -6,14 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All about grid</title>
     <style>
-    .deals {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
+      html, body {height: 100%}
+    .container {
+      display: grid;
+      grid-template-columns: 150px auto;
+      grid-template-rows: 50px auto;
+
+    }
+
+    .container > * {
+  border: 1px solid blue;
   }
+
+
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem; */
     </style>
 </head>
 <body>
-    
+  <div class="container">
+    <nav>nav</nav>
+    <header>header</header>
+    <main>main</main>
+  </div>
 </body>
 </html>
