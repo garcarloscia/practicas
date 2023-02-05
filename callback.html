@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function myForEach(array, callback){ // desclaro función y espero los argumentos de estos parámetros en el primero espero un array y en el segundo una función
+      for (let i=0; i<array.length; i++){
+      callback(array[i]); //invoco callback con un argumento que se recoge la función anónima que espera en su parámetro item)
+      }
+    }
+
+    const miArray = ['pera', 'limón', 'manzana', 'seta mágica'];
+    myForEach(miArray, (item)=>{ //invoco myForeach y paso los argumentos array y callback (ese es una función anónima con su parámetro item)
+      console.log(item);
+    });
+    </script>
+</body>
+</html>
