@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ///esto es el gobal scope
+        ///el scope se comparte como las galletas
+        //las galletas del niño son solo del niño, el niño acceder a las galletas del padre, pero el padre no puede coger galletas del hijo
+        let a = 1;
+
+        function declaro(){
+            //esto es el local scope de la función declaro 
+            let a = 2; //declaro la variable a en el scope de la función
+            console.log("declaro " + a);
+        }
+
+        function noDeclaro(){
+            //esto es otro local scope de la función noDeclaro 
+            a = 3; //js busca la declaración en el scope del parent y allí cambia la variable con la nueva asignación (el hijo cambia la galeta del padre)
+            console.log("noDecaro " + a);
+        }
+        declaro();
+        noDeclaro(); //si no invoco a sigue siendo 1 
+        console.log("gobal" + a); ///a es 3 por el valor que le asigna noDeclaro y después de haber sido invocada
+    </script>
+</body>
+</html>
